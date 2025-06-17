@@ -102,6 +102,6 @@
     "cpu": "1024",
     "memory": "3072",
     "registeredAt": "2025-06-17T22:23:19.409000+03:00",
-    "registeredBy": "arn:aws:iam::160885263348:user/ahmed",
+    "registeredBy": "arn:aws:iam::160885263348:user/ahmed"
     
 }

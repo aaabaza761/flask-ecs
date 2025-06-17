@@ -1,0 +1,107 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:160885263348:task-definition/ecs-flaskapp-maual:1",
+    "containerDefinitions": [
+        {
+            "name": "flask-api",
+            "image": "160885263348.dkr.ecr.eu-north-1.amazonaws.com/flaskapp:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 5003,
+                    "hostPort": 5003,
+                    "protocol": "tcp",
+                    "name": "flask-port",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "FLASK_RUN_PORT",
+                    "value": "5003"
+                },
+                {
+                    "name": "FLASK_APP",
+                    "value": "main.py"
+                },
+                {
+                    "name": "FLASK_RUN_HOST",
+                    "value": "0.0.0.0"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/ecs-flaskapp-maual",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "eu-north-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "ecs-flaskapp-maual",
+    "taskRoleArn": "arn:aws:iam::160885263348:role/ecs-task",
+    "executionRoleArn": "arn:aws:iam::160885263348:role/ecs-task",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2025-06-17T22:23:19.409000+03:00",
+    "registeredBy": "arn:aws:iam::160885263348:user/ahmed",
+    "enableFaultInjection": false
+}
